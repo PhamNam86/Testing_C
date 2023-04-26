@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <string.h>
+
+struct {
+    unsigned int age : 1;
+} Age;
+
+typedef struct baka_s{
+    unsigned int age;
+    //int AGE;
+}baka_t;
+
+typedef struct _student_s {
+    char name[10];  
+    int age;		 
+    int class;		
+}_student_t;
+
+_student_t student;
+
+int main() {
+
+    printf("Sizeof(student)= %d\n",sizeof(_student_t));
+    printf("Sizeof(student_2)= %d\n", sizeof(student));
+
+    printf("Sizeof(student_2)= %d\n", sizeof(baka_t));
+
+    printf("Sizeof( Age ) : %d\n", sizeof(Age));
+
+    Age.age = 0;
+    printf("Age.age0 : %d\n", Age.age);
+
+    Age.age = 1;
+    printf("Age.age1 : %d\n", Age.age);
+
+    Age.age = 2;
+    printf("Age.age2 : %d\n", Age.age);
+
+    Age.age = 3;
+    printf("Age.age3 : %d\n", Age.age);
+
+    Age.age = 4;
+    printf("Age.age4 : %d\n", Age.age);
+
+    Age.age = 5;
+    printf("Age.age5 : %d\n", Age.age);
+
+    Age.age = 6;
+    printf("Age.age6 : %d\n", Age.age);
+
+    Age.age = 7;
+    printf("Age.age7 : %d\n", Age.age);
+
+    Age.age = 10;
+    printf("Age.age : %d\n", Age.age);
+
+    Age.age = 16;
+    printf("Age.age : %d\n", Age.age);
+
+    Age.age = 24;
+    printf("Age.age : %d\n", Age.age);
+
+    Age.age = 32;
+    printf("Age.age : %d\n", Age.age);
+
+    return 0;
+}
