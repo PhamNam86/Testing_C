@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+typedef FILE* fp;
+    fp output, file, testing_file,a_file,r_plus_file, w_plus_file, a_plus_file;
+
+
+int main() 
+{
+    
+    //FILE* fp;
+
+    output = fopen("output.txt", "w+");
+    fprintf(output, "You have to write\n");
+    fputs("Makefile",output);
+    fclose(output);
+
+    file = fopen("file.txt", "r");//    just open to reading file
+    //fprintf(file,"Using symbol r in txt.file");
+    //fputs("Is that ok or not ?",file);
+    fclose(file);
+
+    file = fopen("file.txt", "w");//    create new_file and writing new line
+    fprintf(file,"Using symbol w in txt.file\n");
+    //fputs("Is that ok or not ?",file);
+    fclose(file);
+
+    a_file = fopen("a_file.txt", "a");// create a new_file and writing in next (WWW)
+    fprintf(a_file, "Create a newfile\n");
+    fputs("using symbol a?\n",a_file);
+    fclose(file);
+
+    r_plus_file = fopen("r_plus_file.txt", "r+");// have existing file to writing and reading
+    fprintf(r_plus_file, "reading and writing-ok.\n");
+    fputs("using symbol r+?\n", r_plus_file);
+    fclose(r_plus_file);
+
+    w_plus_file = fopen("w_plus_file.txt", "w+");// length set in 0 if it exist and create a new_file if it has no exsit
+    //fprintf(w_plus_file, "length set in 0 if it exist and create a new_file if it has no exsit\n");
+    fputs("using symbol w+ !!!\n", w_plus_file);
+    fclose(w_plus_file);
+
+    a_plus_file = fopen("testing_file.txt","a+");// reading and writing, create a new_file if it is not exist and writing in next step, reading from first (WWW)
+    fprintf(a_plus_file,"hello world.\n");
+    fclose(a_plus_file);
+
+    return 0;
+}
